@@ -1,3 +1,5 @@
+# COLLEGE STUFF
+
 Kumpulan directory yang berhubungan dengan perkuliahan
 
 - [Sistem Pendukung Keputusan](spk/)
