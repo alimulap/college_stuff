@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\PageController;
+use App\Http\Controllers\PhotoController;
+use App\Http\Controllers\WelcomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,16 +20,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/hello', function () {
- return 'Hello World';
-});
+//Route::get('/hello', function () {
+// return 'Hello World';
+//});
 
 Route::get('/world', function () {
  return 'World';
 });
 
 Route::get('/about', function () {
- return 'nim: 2241720164 <br> Nama: Mohammad Alimul';
+ return 'nim: ANGGAP SAJA NIM <br> Nama: Mohammad Alimul';
 });
 
 Route::get('/user/{name}', function ($name) {
@@ -62,15 +65,29 @@ Route::domain('{account}.example.com')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
-Route::get('/user', [UserController::class, 'index']);
-Route::get('/post', [PostController::class, 'index']);
-Route::get('/event', [EventController::class, 'index']);
+//Route::get('/user', [UserController::class, 'index']);
+//Route::get('/post', [PostController::class, 'index']);
+//Route::get('/event', [EventController::class, 'index']);
 });
 
 Route::prefix('admin')->group(function () {
-Route::get('/user', [UserController::class, 'index']);
-Route::get('/post', [PostController::class, 'index']);
-Route::get('/event', [EventController::class, 'index']);
+//Route::get('/user', [UserController::class, 'index']);
+//Route::get('/post', [PostController::class, 'index']);
+//Route::get('/event', [EventController::class, 'index']);
 });
 
 Route::redirect('/here', '/there');
+
+Route::get('/hello', [WelcomeController::class,'hello']);
+
+Route::get('/', [PageController::class, 'index']);
+Route::get('/about', [PageController::class, 'about']);
+Route::get('/articles/{id}', [PageController::class, 'articles']);
+
+// Route::resource('photos', PhotoController::class);
+Route::resource('photos', PhotoController::class)->only([
+ 'index', 'show'
+]);
+Route::resource('photos', PhotoController::class)->except([
+ 'create', 'store', 'update', 'destroy'
+]);
