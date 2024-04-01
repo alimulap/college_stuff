@@ -14,11 +14,12 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/products', [ProductController::class, 'index']);
 Route::get('/category/{category}', [ProductController::class, 'category']);
 
-Route::get('/user/{id}/name/{name}', [UserController::class, 'index']);
+//Route::get('/user/{id}/name/{name}', [UserController::class, 'index']);
 
 Route::get('/transactions', [TransactionController::class, 'transactions']);
 
 Route::get('/level', [LevelController::class, 'index']);
 Route::get('/kategori', [KategoriController::class, 'index']);
+Route::get('/user', [UserController::class, 'index']);
 
 
