@@ -5,7 +5,7 @@
 </head>
 <body>
     <h1>Data Kategori Pengguna</h1>
-    <table border="1">
+    <table border="1" cellpadding="2" cellspacing="0">
         <tr>
             <th>No</th>
             <th>Kode Kategori</th>
