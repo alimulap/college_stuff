@@ -36,9 +36,12 @@ class UserController extends Controller
         //$user = UserModel::where('level_id', 1)->first();
         //$user = UserModel::firstWhere('level_id', 1);
 
-        $user = UserModel::findOr(20, ['username', 'nama'], function () {
-            abort(404);
-        });
+        //$user = UserModel::findOr(20, ['username', 'nama'], function () {
+        //    abort(404);
+        //});
+
+        //$user = UserModel::findOrFail(1);
+        $user = UserModel::where('username', 'managet9')->firstOrFail();
         return view('user', ['data' => $user]);
     }
 }
