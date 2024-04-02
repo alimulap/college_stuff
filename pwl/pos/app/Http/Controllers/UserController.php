@@ -10,70 +10,21 @@ class UserController extends Controller
 {
     public function index()
     {
-        //$data = [
-        //    'username' => 'customer-1',
-        //    'nama' => 'Pelanggan',
-        //    'password' => Hash::make('12345'),
-        //    'level_id' => 4
-        //];
-        //UserModel::insert($data);
+        $user = UserModel::create([
+            'username' => 'manager11',
+            'nama' => 'Manager11',
+            'password' => Hash::make('12345'),
+            'level_id' => 2
+        ]);
 
-        //$data = [
-        //    'username' => 'Pelanggan pertama',
-        //];
-        //UserModel::where('username', 'customer-1')->update($data);
+        $user->username = 'manager12';
 
-        //$data = [
-        //    'level_id' => 2,
-        //    'username' => 'manager_tiga',
-        //    'nama' => 'Manager 3',
-        //    'password' => Hash::make('12345')
-        //];
-        //UserModel::create($data);
-
-        //$user = UserModel::all();
-        //$user = UserModel::find(1);
-        //$user = UserModel::where('level_id', 1)->first();
-        //$user = UserModel::firstWhere('level_id', 1);
-
-        //$user = UserModel::findOr(20, ['username', 'nama'], function () {
-        //    abort(404);
-        //});
-
-        //$user = UserModel::findOrFail(1);
-        //$user = UserModel::where('username', 'managet9')->firstOrFail();
-
-        //$user = UserModel::where('level_id', 2)->count();
-
-        //$user = UserModel::firstOrCreate(
-        //    [
-        //        'username' => 'manager',
-        //        'nama' => 'Manager',
-        //    ],
-        //);
-        //$user = UserModel::firstOrCreate(
-        //    [
-        //        'username' => 'manager22',
-        //        'nama' => 'Manager Dua Dua',
-        //        'password' => Hash::make('12345'),
-        //        'level_id' => 2
-        //    ],
-        //);
-        //$user = UserModel::firstOrNew(
-        //    [
-        //        'username' => 'manager',
-        //        'nama' => 'Manager',
-        //    ],
-        //);
-        $user = UserModel::firstOrNew(
-            [
-                'username' => 'manager33',
-                'nama' => 'Manager Tiga Tiga',
-                'password' => Hash::make('12345'),
-                'level_id' => 2
-            ],
-        );
         $user->save();
-        return view('user', ['data' => $user]);
+
+        $user->wasChanged();
+        $user->wasChanged('username');
+        $user->wasChanged(['username', 'level_id']);
+        $user->wasChanged('nama');
+        dd($user->wasChanged(['name', 'username']));
     }
 }
