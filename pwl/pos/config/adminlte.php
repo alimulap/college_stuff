@@ -323,7 +323,7 @@ return [
             'label_color' => 'success',
         ],
         [
-            'text' => 'kategori',
+            'text' => 'Kategori',
             'url' => 'kategori',
             'icon' => 'fas fa-fw fa-book',
         ],
