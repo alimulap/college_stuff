@@ -33,4 +33,13 @@ class KategoriController extends Controller
         $kategori = KategoriModel::find($id);
         return view('kategori.edit', compact('kategori'));
     }
+
+    public function update(Request $request)
+    {
+        KategoriModel::where('kategori_id', $request->kategoriId)->update([
+            'kategori_kode' => $request->kodeKategori,
+            'kategori_nama' => $request->namaKategori,
+        ]);
+        return redirect('/kategori');
+    }
 }
