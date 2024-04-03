@@ -322,6 +322,11 @@ return [
             'label' => 4,
             'label_color' => 'success',
         ],
+        [
+            'text' => 'kategori',
+            'url' => 'kategori',
+            'icon' => 'fas fa-fw fa-book',
+        ],
         ['header' => 'account_settings'],
         [
             'text' => 'profile',
