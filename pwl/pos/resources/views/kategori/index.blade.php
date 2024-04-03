@@ -6,10 +6,6 @@
 
 @section('content')
     <div class="container">
-        <button type="button" class="btn btn-secondary mb-3" onclick="window.location='/kategori/create'">
-            Tambah
-        </button>
-
         <div class="card">
             <div class="card-header">
                 Manage Kategori
