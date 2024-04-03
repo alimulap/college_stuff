@@ -1,10 +1,10 @@
 @extends('layout.app')
 
-@section('subtitle', 'Welcome')
+@section('subtitle', 'Kategori')
 @section('content_header_title', 'Home')
 @section('content_header_subtitle', 'Kategori')
 
-@section('content_body')
+@section('content')
     <div class="container">
         <div class="card">
             <div class="card-header">
@@ -17,10 +17,6 @@
     </div>
 @endsection
 
-@section('css')
-
-@endsection
-
-@section('js')
+@push('scripts')
     {{ $dataTable->scripts() }}
-@endsection
+@endpush

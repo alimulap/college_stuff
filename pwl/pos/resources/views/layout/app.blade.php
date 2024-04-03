@@ -1,19 +1,16 @@
 @extends('adminlte::page')
 
-{{-- Extend and customize the browser title --}}
-
 @section('title')
     {{ config('adminlte.title') }}
     @hasSection('subtitle') | @yield('subtitle') @endif
 @stop
 
-{{-- Extend and customize the page content header --}}
+@vite('resources/js/app.js')
 
 @section('content_header')
     @hasSection('content_header_title')
         <h1 class="text-muted">
             @yield('content_header_title')
-
             @hasSection('content_header_subtitle')
                 <small class="text-dark">
                     <i class="fas fa-xs fa-angle-right text-muted"></i>
@@ -24,13 +21,9 @@
     @endif
 @stop
 
-{{-- Rename section content to content_body --}}
-
 @section('content')
     @yield('content_body')
 @stop
-
-{{-- Create a common footer --}}
 
 @section('footer')
     <div class="float-right">
@@ -43,28 +36,24 @@
     </strong>
 @stop
 
-{{-- Add common Javascript/Jquery code --}}
-
 @push('js')
-<script>
-    $(document).ready(function() {
-        // Add your common script logic here...
-    });
-</script>
+        <!-- <script src="https://cdn.datatables.net/2.0.2/js/dataTables.js"></script> -->
+        <script src="https://cdn.datatables.net/v/bs5/dt-2.0.3/b-3.0.1/sl-2.0.0/datatables.min.js"></script>
 @endpush
 
-{{-- Add common CSS customizations --}}
+@stack('scripts')
 
 @push('css')
+<!-- <link rel="stylesheet" href="https://cdn.datatables.net/2.0.2/css/dataTables.dataTables.css"> -->
+<link rel="stylesheet" href="https://cdn.datatables.net/v/bs5/dt-2.0.3/b-3.0.1/sl-2.0.0/datatables.min.css">
 <style type="text/css">
-    /* {{-- You can add AdminLTE customizations here --}} */
-    /*
+/*
     .card-header {
     border-bottom: none;
     }
     .card-title {
     font-weight: 600;
     }
-    */
+*/
 </style>
 @endpush
