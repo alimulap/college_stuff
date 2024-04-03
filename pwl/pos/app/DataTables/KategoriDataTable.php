@@ -73,7 +73,8 @@ class KategoriDataTable extends DataTable
             Column::make('updated_at'),
             Column::make('action')
                 ->render(
-                    '\'<a href="kategori/\'+full[\'\kategori_id\']+\'/edit" class="btn btn-warning">Edit</a>\''
+                    '\'<a href="kategori/\'+full[\'\kategori_id\']+\'/edit" class="btn btn-warning">Edit</a>\' +
+                    \'<a href="kategori/\'+full[\'\kategori_id\']+\'/delete" class="btn btn-danger">Delete</a>\''
                 )
         ];
     }
