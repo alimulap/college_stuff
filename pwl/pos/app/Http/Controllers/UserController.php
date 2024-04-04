@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UserStoreRequest;
 use App\Models\UserModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -19,14 +20,15 @@ class UserController extends Controller
         return view('user.create');
     }
 
-    public function tambah_simpan(Request $request)
+    public function tambah_simpan(UserStoreRequest $request)
     {
-        UserModel::create([
-            'username' => $request->username,
-            'nama' => $request->nama,
-            'password' => Hash::make($request->password),
-            'level_id' => $request->level_id
-        ]);
+        //UserModel::create([
+        //    'username' => $request->username,
+        //    'nama' => $request->nama,
+        //    'password' => Hash::make($request->password),
+        //    'level_id' => $request->level_id
+        //]);
+        $validated = $request->validated();
 
         return redirect('/user');
     }

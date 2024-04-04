@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\LevelStoreRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -18,13 +19,14 @@ class LevelController extends Controller
         return view('level.create');
     }
 
-    public function store(Request $request)
+    public function store(LevelStoreRequest $request)
     {
-        DB::table('m_level')->insert([
-            'level_id' => $request->levelId,
-            'level_kode' => $request->levelKode,
-            'level_nama' => $request->levelNama,
-        ]);
+        //DB::table('m_level')->insert([
+        //    'level_id' => $request->levelID,
+        //    'level_kode' => $request->levelKode,
+        //    'level_nama' => $request->levelNama,
+        //]);
+        $validated = $request->validated();
         return redirect('/level');
     }
 }
