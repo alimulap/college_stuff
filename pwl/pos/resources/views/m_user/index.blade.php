@@ -1,15 +1,9 @@
 @extends('m_user/template')
+@section('title', 'CRUD User')
 @section('content')
     @csrf
-    <div class="row mt-5 mb-5">
-        <div class="col-lg-12 margin-tb">
-            <div class="float-left">
-                <h2>CRUD user</h2>
-            </div>
-            <div class="float-right">
-                <a class="btn btn-success" href="{{ route('m_user.create') }}"> Input User</a>
-            </div>
-        </div>
+    <div class="float-right mb-2">
+        <a class="btn btn-success" href="{{ route('m_user.create') }}"> Input User</a>
     </div>
 
     @if ($message = Session::get('success'))
@@ -18,14 +12,18 @@
         </div>
     @endif
 
-    <table class="table table-bordered">
-        <tr>
-        <th width="20px" class="text-center">User id</th>
-        <th width="150px" class="text-center">Level id</th>
-        <th width="200px"class="text-center">username</th>
-        <th width="200px"class="text-center">nama</th>
-        <th width="150px"class="text-center">password</th>
-        </tr>
+    <table class="table table-bordered table-hover table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th width="20px" class="text-center">User id</th>
+                <th width="150px" class="text-center">Level id</th>
+                <th width="200px"class="text-center">username</th>
+                <th width="200px"class="text-center">nama</th>
+                <th width="150px"class="text-center">password</th>
+                <th width="280px"class="text-center">Action</th>
+            </tr>
+        </thead>
+        <tbody>
         @foreach ($users as $m_user)
             <tr>
                 <td>{{ $m_user->user_id }}</td>
@@ -43,5 +41,6 @@
                 </td>
             </tr>
         @endforeach
+        </tbody>
     </table>
 @endsection
