@@ -4,6 +4,7 @@
 /public/hot
 /public/storage
 /public/template
+/public/adminlte
 /storage/*.key
 /vendor
 .env
