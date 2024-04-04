@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\LevelController;
+use App\Http\Controllers\POSController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\UserController;
@@ -24,6 +25,7 @@ Route::get('/level/create', [LevelController::class, 'create']);
 Route::post('/level', [LevelController::class, 'store']);
 //Route::get('/kategori', [KategoriController::class, 'index']);
 Route::get('/user', [UserController::class, 'index']);
+Route::resource('m_user', POSController::class);
 
 Route::get('/user/tambah', [UserController::class, 'tambah']);
 Route::post('/user/tambah/simpan', [UserController::class, 'tambah_simpan']);
@@ -37,7 +39,6 @@ Route::post('/kategori', [KategoriController::class, 'store']);
 Route::get('/kategori/{id}/edit', [KategoriController::class, 'edit']);
 Route::post('/kategori/update', [KategoriController::class, 'update']);
 Route::get('/kategori/{id}/delete', [KategoriController::class, 'delete']);
-
 
 //Auth::routes();
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
