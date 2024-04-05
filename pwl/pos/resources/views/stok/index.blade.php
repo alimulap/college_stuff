@@ -4,7 +4,7 @@
         <div class="card-header">
             <h3 class="card-title">{{ $page->title }}</h3>
             <div class="card-tools">
-                <a class="btn btn-sm btn-primary mt-1" href="{{ url('kategori/create') }}">Tambah</a>
+                <a class="btn btn-sm btn-primary mt-1" href="{{ url('stok/create') }}">Tambah</a>
             </div>
         </div>
         <div class="card-body">
@@ -18,13 +18,15 @@
                 {{ session('error') }}
             </div>
         @endif
-        <table class="table table-bordered table-striped table-hover table-sm" id="table_kategori">
+        <table class="table table-bordered table-striped table-hover table-sm" id="table_stok">
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>Level Id</th>
-                    <th>Nama Level</th>
-                    <th>Kode Level</th>
+                    <th>Stok Id</th>
+                    <th>Barang Id</th>
+                    <th>User Id</th>
+                    <th>Stok Tanggal</th>
+                    <th>Stok Jumlah</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
@@ -39,10 +41,10 @@
 @push('js')
     <script>
         $(document).ready(function() {
-            var dataUser = $('#table_kategori').DataTable({
+            var dataUser = $('#table_stok').DataTable({
                 serverSide: true,
                 ajax: {
-                    "url": "{{ url('kategori/list') }}",
+                    "url": "{{ url('stok/list') }}",
                     "dataType": "json",
                     "type": "POST",
                 },
@@ -53,17 +55,27 @@
                         orderable: false,
                         searchable: false
                     },{
-                        data: "kategori_id",
+                        data: "stok_id",
                         className: "",
                         orderable: true,
                         searchable: true
                     },{
-                        data: "kategori_nama",
+                        data: "barang_id",
                         className: "",
                         orderable: true,
                         searchable: true
                     },{
-                        data: "kategori_kode",
+                        data: "user_id",
+                        className: "",
+                        orderable: true,
+                        searchable: true
+                    },{
+                        data: "stok_tanggal",
+                        className: "",
+                        orderable: true,
+                        searchable: true
+                    },{
+                        data: "stok_jumlah",
                         className: "",
                         orderable: true,
                         searchable: true

@@ -12,41 +12,32 @@
                 <div class="form-group row">
                     <label class="col-1 control-label col-form-label">Level</label>
                     <div class="col-11">
-                        <select class="form-control" id="level_id" name="level_id" required>
+                        <select class="form-control" id="kategori_id" name="level_id" required>
                             <option value="">- Pilih Level -</option>
-                            @foreach($level as $item)
-                                <option value="{{ $item->level_id }}">{{ $item->level_nama }}</option>
+                            @foreach($kategori as $item)
+                                <option value="{{ $item->kategori_id }}">{{ $item->level_nama }}</option>
                             @endforeach
                         </select>
-                        @error('level_id')
+                        @error('kategori_id')
                             <small class="form-text text-danger">{{ $message }}</small>
                         @enderror
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label class="col-1 control-label col-form-label">Username</label>
+                    <label class="col-1 control-label col-form-label">Kategori Kode</label>
                     <div class="col-11">
-                        <input type="text" class="form-control" id="username" name="username" value="{{ old('username') }}" required>
-                        @error('username')
+                        <input type="text" class="form-control" id="kategori_kode" name="kategori_kode" value="{{ old('kategori_kode') }}" required>
+                        @error('kategori_kode')
                             <small class="form-text text-danger">{{ $message }}</small>
                         @enderror
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label class="col-1 control-label col-form-label">Nama</label>
+                    <label class="col-1 control-label col-form-label">Kategori Nama</label>
                     <div class="col-11">
-                        <input type="text" class="form-control" id="nama" name="nama"
-                        value="{{ old('nama') }}" required>
+                        <input type="text" class="form-control" id="kategori_nama" name="kategori_nama"
+                        value="{{ old('kategori_nama') }}" required>
                         @error('nama')
-                            <small class="form-text text-danger">{{ $message }}</small>
-                        @enderror
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-1 control-label col-form-label">Password</label>
-                    <div class="col-11">
-                        <input type="password" class="form-control" id="password" name="password" required>
-                        @error('password')
                             <small class="form-text text-danger">{{ $message }}</small>
                         @enderror
                     </div>
