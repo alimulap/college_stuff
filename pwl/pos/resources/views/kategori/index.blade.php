@@ -22,9 +22,9 @@
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>Level Id</th>
-                    <th>Nama Level</th>
-                    <th>Kode Level</th>
+                    <!-- <th>Barang Id</th> -->
+                    <th>Nama Kategori Barang</th>
+                    <th>Kode Kategori</th>
                     <th>Aksi</th>
                 </tr>
             </thead>
@@ -52,12 +52,14 @@
                         className: "text-center",
                         orderable: false,
                         searchable: false
-                    },{
-                        data: "kategori_id",
-                        className: "",
-                        orderable: true,
-                        searchable: true
-                    },{
+                    },
+                    // {
+                    //     data: "kategori_id",
+                    //     className: "",
+                    //     orderable: true,
+                    //     searchable: true
+                    // } ,
+                    {
                         data: "kategori_nama",
                         className: "",
                         orderable: true,

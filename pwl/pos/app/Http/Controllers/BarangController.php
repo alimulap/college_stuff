@@ -91,7 +91,7 @@ class BarangController extends Controller
 
     public function show(string $id)
     {
-        $barang = BarangModel::find($id);
+        $barang = BarangModel::with('kategori')->whereIn("barang_id", [$id])->first();
 
         $breadcrumb = (object) [
             'title' => 'User barang',

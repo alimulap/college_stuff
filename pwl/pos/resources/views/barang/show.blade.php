@@ -6,29 +6,43 @@
             <div class="card-tools"></div>
         </div>
         <div class="card-body">
-            @empty($level)
+            @empty($barang)
                 <div class="alert alert-danger alert-dismissible">
                     <h5><i class="icon fas fa-ban"></i> Kesalahan!</h5>
                     Data yang Anda cari tidak ditemukan.
                 </div>
             @else
                 <table class="table table-bordered table-striped table-hover table- sm">
+                    <!--
                     <tr>
-                        <th>level Id</th>
-                        <td>{{ $level->level_id }}</td>
+                        <th>barang Id</th>
+                        <td>{{ $barang->barang_id }}</td>
+                    </tr>
+                    -->
+                    <tr>
+                        <th>Kategori Barang</th>
+                        <td>{{ $barang->kategori->kategori_nama }}
                     </tr>
                     <tr>
-                        <th>Level Nama</th>
-                        <td>{{ $level->level_nama }}</td>
+                        <th>barang Nama</th>
+                        <td>{{ $barang->barang_nama }}</td>
                     </tr>
                     <tr>
-                        <th>Level Kode</th>
-                        <td>{{ $level->level_kode }}</td>
+                        <th>barang Kode</th>
+                        <td>{{ $barang->barang_kode }}</td>
+                    </tr>
+                    <tr>
+                        <th>Harga Jual</th>
+                        <td>{{ $barang->harga_jual }}</td>
+                    </tr>
+                    <tr>
+                        <th>Harga Beli</th>
+                        <td>{{ $barang->harga_beli }}</td>
                     </tr>
                 </table>
             @endempty
 
-            <a href="{{ url('level') }}" class="btn btn-sm btn-default mt- 2">Kembali</a>
+            <a href="{{ url('barang') }}" class="btn btn-sm btn-default mt- 2">Kembali</a>
         </div>
     </div>
 @endsection

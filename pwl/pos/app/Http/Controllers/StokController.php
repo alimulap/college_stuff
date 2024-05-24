@@ -28,7 +28,9 @@ class StokController extends Controller
 
     public function list()
     {
-        $stok = StokModel::select('stok_id', 'barang_id', 'user_id', 'stok_tanggal', 'stok_jumlah');
+        // $stok = StokModel::select('stok_id', 'barang_id', 'user_id', 'stok_tanggal', 'stok_jumlah');
+        $stok = StokModel::with(['barang', 'user'])->get();
+        // dd($stok);
 
         return DataTables::of($stok)
             ->addIndexColumn()

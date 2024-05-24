@@ -22,9 +22,11 @@
             <thead>
                 <tr>
                     <th>No</th>
+                    <!--
                     <th>Stok Id</th>
-                    <th>Barang Id</th>
-                    <th>User Id</th>
+                    -->
+                    <th>Nama Barang</th>
+                    <th>Penanggung Jawab</th>
                     <th>Stok Tanggal</th>
                     <th>Stok Jumlah</th>
                     <th>Aksi</th>
@@ -54,18 +56,20 @@
                         className: "text-center",
                         orderable: false,
                         searchable: false
-                    },{
-                        data: "stok_id",
+                    },
+                    // {
+                    //     data: "stok_id",
+                    //     className: "",
+                    //     orderable: true,
+                    //     searchable: true
+                    // },
+                    {
+                        data: "barang.barang_nama",
                         className: "",
                         orderable: true,
                         searchable: true
                     },{
-                        data: "barang_id",
-                        className: "",
-                        orderable: true,
-                        searchable: true
-                    },{
-                        data: "user_id",
+                        data: "user.nama",
                         className: "",
                         orderable: true,
                         searchable: true

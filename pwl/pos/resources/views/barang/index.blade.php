@@ -22,8 +22,10 @@
             <thead>
                 <tr>
                     <th>No</th>
+                    <!--
                     <th>Barang Id</th>
-                    <th>Kategori Id</th>
+                    -->
+                    <th>Kategori Barang</th>
                     <th>Nama Barang</th>
                     <th>Kode Barang</th>
                     <th>Harga jual</th>
@@ -55,12 +57,14 @@
                         className: "text-center",
                         orderable: false,
                         searchable: false
-                    },{
-                        data: "barang_id",
-                        className: "",
-                        orderable: true,
-                        searchable: true
-                    },{
+                    },
+                    // {
+                    //     data: "barang_id",
+                    //     className: "",
+                    //     orderable: true,
+                    //     searchable: true
+                    // },
+                    {
                         data: "kategori.kategori_nama",
                         className: "",
                         orderable: false,
