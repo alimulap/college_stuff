@@ -8,7 +8,9 @@
         "php": "^8.2",
         "jeroennoten/laravel-adminlte": "*",
         "laravel/framework": "^11.0",
+        "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9",
+        "tymon/jwt-auth": "2.1.1",
         "yajra/laravel-datatables": "^11.0",
         "yajra/laravel-datatables-oracle": "^11"
     },
