@@ -33,13 +33,11 @@ class FileUploadController extends Controller
         // $path = $request->berkas->store('uploads');
         // $path = $request->berkas->storeAs('uploads', 'berkas');
         // $namaFile = $request->berkas->getClientOriginalName();
-        $namaFile = "web-" . time() . "." . $request->berkas->getClientOriginalExtension();
+        $namaFile = $request->namaBerkas . '.' . $request->berkas->extension();
         // $path = $request->berkas->storeAs('public', $namaFile);
         $path = $request->berkas->move('gambar', $namaFile);
-        echo "File berhasil diupload ke " . $path;
-        echo "<br>";
-        $pathNew = asset('gambar/' . $namaFile);
-        echo "File bisa diakses di <a href='" . $pathNew . "'>" . $pathNew . "</a>";
+        echo "File berhasil diupload ke <a href='" . asset($path) . "'>$namaFile</a>";
+        echo "<img src='" . asset($path) . "' alt=''>";
         // echo $request->berkas->getClientOriginalName() . " lolos validasi";
     }
 }

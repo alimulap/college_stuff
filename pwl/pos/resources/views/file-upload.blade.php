@@ -23,6 +23,8 @@
             @csrf
 
             <div class="mb-3">
+                <label for="nama" class="form-label">Nama Gambar</label>
+                <input type="text" class="form-control" id="namaBerkas" name="namaBerkas">
                 <label for="berkas" class="form-label">Gambar Profile</label>
                 <input type="file" class="form-control" id="berkas" name="berkas">
                 @error('berkas')
