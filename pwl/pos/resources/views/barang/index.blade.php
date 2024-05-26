@@ -25,9 +25,10 @@
                     <!--
                     <th>Barang Id</th>
                     -->
+                    <th>Gambar Barang</th>
                     <th>Kategori Barang</th>
                     <th>Nama Barang</th>
-                    <th>Kode Barang</th>
+                    <!-- <th>Kode Barang</th> -->
                     <th>Harga jual</th>
                     <th>Harga beli</th>
                     <th>Aksi</th>
@@ -65,6 +66,15 @@
                     //     searchable: true
                     // },
                     {
+                        data: "image",
+                        className: "",
+                        orderable: false,
+                        searchable: false,
+                        render: function (data, type, row, meta) {
+                            return '<img src="{{ env('APP_URL') }}:8080/images/'+data+'" alt="'+row.barang_nama+'" class="img-thumbnail" width="100">';
+                        }
+                    },
+                    {
                         data: "kategori.kategori_nama",
                         className: "",
                         orderable: false,
@@ -74,12 +84,14 @@
                         className: "",
                         orderable: true,
                         searchable: true
-                    },{
-                        data: "barang_kode",
-                        className: "",
-                        orderable: true,
-                        searchable: true
-                    },{
+                    },
+                    // {
+                    //     data: "barang_kode",
+                    //     className: "",
+                    //     orderable: true,
+                    //     searchable: true
+                    // },
+                    {
                         data: "harga_jual",
                         className: "",
                         orderable: true,

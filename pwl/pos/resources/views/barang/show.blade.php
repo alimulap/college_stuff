@@ -20,6 +20,12 @@
                     </tr>
                     -->
                     <tr>
+                        <th>Gambar barang</th>
+                        <td>
+                            <img src="<?= env('APP_URL') . ':8080/images/' . $barang->image ?>" alt="{{ $barang->barang_nama }}" class="img-thumbnail" width="100">
+                        </td>
+                    </tr>
+                    <tr>
                         <th>Kategori Barang</th>
                         <td>{{ $barang->kategori->kategori_nama }}
                     </tr>

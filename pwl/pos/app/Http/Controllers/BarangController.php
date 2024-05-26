@@ -27,7 +27,7 @@ class BarangController extends Controller
 
     public function list()
     {
-        $barang = BarangModel::with('kategori')->select('barang_id', 'barang_nama', 'barang_kode', 'kategori_id', 'harga_beli', 'harga_jual');
+        $barang = BarangModel::with('kategori')->select('barang_id', 'barang_nama', 'barang_kode', 'kategori_id', 'harga_beli', 'harga_jual', 'image');
 
         return DataTables::of($barang)
             ->addIndexColumn()
