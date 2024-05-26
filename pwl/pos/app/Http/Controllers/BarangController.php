@@ -75,7 +75,14 @@ class BarangController extends Controller
             'barang_nama' => 'required|string|max:100',
             'harga_beli' => 'required|numeric',
             'harga_jual' => 'required|numeric',
+            'gambar' => 'sometimes|file|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
+
+        $filename = null;
+        if (isset($request->gambar)) {
+            $filename = $request->barang_kode . '.' . $request->gambar->getClientOriginalExtension();
+            $request->gambar->move('gambar', $filename);
+        }
 
         BarangModel::create([
             'barang_id' => $request->barang_id,
@@ -84,6 +91,7 @@ class BarangController extends Controller
             'barang_nama' => $request->barang_nama,
             'harga_beli' => $request->harga_beli,
             'harga_jual' => $request->harga_jual,
+            'image' => $filename ?? '',
         ]);
 
         return redirect('/barang')->with('success', 'Data berhasil ditambahkan');

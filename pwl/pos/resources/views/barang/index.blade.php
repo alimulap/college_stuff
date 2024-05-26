@@ -71,7 +71,7 @@
                         orderable: false,
                         searchable: false,
                         render: function (data, type, row, meta) {
-                            return '<img src="{{ env('APP_URL') }}:8080/images/'+data+'" alt="'+row.barang_nama+'" class="img-thumbnail" width="100">';
+                            return '<img src="{{ env('APP_URL') }}:8080/gambar/'+data+'" alt="'+row.barang_nama+'" class="img-thumbnail" width="100">';
                         }
                     },
                     {
